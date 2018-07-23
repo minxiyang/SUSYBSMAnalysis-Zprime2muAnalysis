@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-miniAOD = False
+miniAOD = True
 
 import sys, os, FWCore.ParameterSet.Config as cms
 from SUSYBSMAnalysis.Zprime2muAnalysis.Zprime2muAnalysis_cff import switch_hlt_process_name
@@ -9,8 +9,8 @@ from SUSYBSMAnalysis.Zprime2muAnalysis.Zprime2muAnalysis_cff import goodDataFilt
 
 
 
-process.source.fileNames =[#'/store/mc/RunIISpring16MiniAODv2/ZToMuMu_NNPDF30_13TeV-powheg_M_120_200/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/90000/B2BFFF97-603A-E611-90A2-0CC47AB35D34.root',
-                          '/store/user/jschulte/ZToMuMu_NNPDF30_13TeV-powheg_M_120_200/datamc_DY120to200Powheg/160921_123338/0000/pat_1.root',
+process.source.fileNames =['/store/mc/RunIISpring16MiniAODv2/ZToMuMu_NNPDF30_13TeV-powheg_M_120_200/MINIAODSIM/PUSpring16RAWAODSIM_reHLT_80X_mcRun2_asymptotic_v14-v1/90000/B2BFFF97-603A-E611-90A2-0CC47AB35D34.root',
+                          #'/store/user/jschulte/ZToMuMu_NNPDF30_13TeV-powheg_M_120_200/datamc_DY120to200Powheg/160921_123338/0000/pat_1.root',
                           #'/store/user/jschulte/ZToMuMu_NNPDF30_13TeV-powheg_M_120_200/datamc_DY120to200Powheg/160921_123338/0000/pat_21.root',  
 			 ]
 process.maxEvents.input = -1
