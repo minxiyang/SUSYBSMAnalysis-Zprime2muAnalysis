@@ -101,7 +101,7 @@ config.JobType.psetName = 'cmssw_cfg.py'
 config.Data.inputDBS = 'global'
 config.Data.publication = False
 config.Data.outputDatasetTag = 'dileptonAna_%s'
-config.Data.outLFNDirBase = '/store/user/jschulte'
+config.Data.outLFNDirBase = '/store/user/minxi'
 config.Site.storageSite = 'T2_US_Purdue'
 #config.Site.whitelist = ['T2_ES_IFCA','T2_US_MIT','T2_US_UCSD']
 config.Data.userInputFiles = %s
@@ -132,7 +132,7 @@ config.Data.inputDBS = 'global'
 config.Data.publication = False
 config.Data.allowNonValidInputDataset = True
 config.Data.outputDatasetTag = 'dileptonAna_%s'
-config.Data.outLFNDirBase = '/store/user/jschulte/'
+config.Data.outLFNDirBase = '/store/user/minxi/'
 #config.Data.ignoreLocality = True
 #config.General.instance = 'preprod' 
 config.Site.storageSite = 'T2_US_Purdue'
@@ -175,7 +175,7 @@ config.Data.inputDataset =  '%s'
 config.Data.inputDBS = 'global'
 config.Data.publication = False
 config.Data.outputDatasetTag = 'dileptonAna_%s'
-config.Data.outLFNDirBase = '/store/user/jschulte/'
+config.Data.outLFNDirBase = '/store/user/minxi/'
 config.Data.ignoreLocality = True
 config.Data.allowNonValidInputDataset = True
 #config.General.instance = 'preprod' 
@@ -464,8 +464,9 @@ def main():
 				crab_cfg = getCRABCfgAAA(prefix+dataset_name,dataset,lumi_mask)
 			else:	
 				crab_cfg = getCRABCfg(prefix+dataset_name,dataset,lumi_mask)
-			if args.do2016 and ("Lam100kTeV" in dataset_name or "Lam10TeV"	in dataset_name or "ADDGravToLL_LambdaT100k_M1700" in dataset_name):
+			if args.do2018 and ("Lam100kTeV" in dataset_name or "Lam10TeV"	in dataset_name or "ADDGravToLL_LambdaT100k_M1700" in dataset_name or "Zp" in dataset_name):
 				crab_cfg = crab_cfg.replace("config.Data.inputDBS = 'global'","config.Data.inputDBS = 'phys03'")
+				print "zprime"
 			if args.do2016 and dataset_name == "CITo2E_Lam1TeVConLR_M300":
 				crab_cfg = crab_cfg + '\n'					
 				crab_cfg = crab_cfg + 'config.Data.allowNonValidInputDataset = True'					
@@ -481,7 +482,7 @@ def main():
 			if dataset_name == "dummy":
 				cmssw_tmp = cmssw_tmp.replace('dummyFile', dataset)
 			else:
-				if 'CITo2Mu_Lam10TeV' in dataset_name or args.ci2016:
+				if 'CITo2Mu_Lam10TeV' in dataset_name or args.ci2016 or 'Zp' in dataset_name:
 					print 'here'	
 					os.system('dasgoclient -query="file dataset=%s instance=prod/phys03| grep file.name" > myfiles.txt'%dataset)
 				else:	

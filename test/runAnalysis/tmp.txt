@@ -1,0 +1,38 @@
+28-Jul-2020 08:40:06 EDT  Initiating request to open file /mnt/hadoop/store/user/minxi/ZprimeToMuMu-4000_M-4500To6000_13TeV-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v4/200702_023026/0000/step4_miniAOD_9.root
+28-Jul-2020 08:40:09 EDT  Successfully opened file /mnt/hadoop/store/user/minxi/ZprimeToMuMu-4000_M-4500To6000_13TeV-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v4/200702_023026/0000/step4_miniAOD_9.root
+Begin processing the 1st record. Run 1, Event 1, LumiSection 10 on stream 0 at 28-Jul-2020 08:40:57.642 EDT
+28-Jul-2020 08:40:57 EDT  Closed file /mnt/hadoop/store/user/minxi/ZprimeToMuMu-4000_M-4500To6000_13TeV-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v4/200702_023026/0000/step4_miniAOD_9.root
+
+------------------------------------
+GenXsecAnalyzer:
+------------------------------------
+Before Filter: total cross section = 1.133e-04 +- 6.303e-06 pb
+Filter efficiency (taking into account weights)= (100) / (100) = 1.000e+00 +- 0.000e+00
+Filter efficiency (event-level)= (100) / (100) = 1.000e+00 +- 0.000e+00    [TO BE USED IN MCM]
+
+After filter: final cross section = 1.133e-04 +- 6.303e-06 pb
+After filter: final fraction of events with negative weights = 0.000e+00 +- 0.000e+00
+After filter: final equivalent lumi for 1M events (1/fb) = 8.825e+06 +- 4.331e+12
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 GenXSecAnalyzer      -w GenXSecAnalyzer:                       7        7
+    2 fileAction           -s file_close                             1        1
+    3 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 GenXSecAnalyzer      PostGlobalEndRun PostGlobalEndRun PostGlobalEndRun
+    2 fileAction           PostGlobalEndRun                  
+    3 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                 7                   7
+System                  3                   3
+
+dropped waiting message count 0
