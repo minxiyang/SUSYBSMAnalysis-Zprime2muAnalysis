@@ -301,6 +301,7 @@ def main():
 			analyzer= open('histogrammerElectrons.py').read()
 		else:	
 			analyzer= open('histogrammerMuons.py').read()
+			#analyzer= open('EfficiencyFromMC_cfi.py').read()
 	applyAllGenFilters = True
 
 	if args.do2016:
@@ -481,7 +482,7 @@ def main():
 			if dataset_name == "dummy":
 				cmssw_tmp = cmssw_tmp.replace('dummyFile', dataset)
 			else:
-				if 'CITo2Mu_Lam10TeV' in dataset_name or args.ci2016:
+				if 'CITo2Mu_Lam10TeV' in dataset_name or args.ci2016 or "Zprime" in dataset_name:
 					print 'here'	
 					os.system('dasgoclient -query="file dataset=%s instance=prod/phys03| grep file.name" > myfiles.txt'%dataset)
 				else:	

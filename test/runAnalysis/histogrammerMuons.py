@@ -2,6 +2,7 @@
 Electrons = False
 
 from SUSYBSMAnalysis.Zprime2muAnalysis.HistosFromPAT_cfi import HistosFromPAT_MiniAOD as HistosFromPAT
+from SUSYBSMAnalysis.Zprime2muAnalysis.EfficiencyFromMC_cfi import EfficiencyFromMCMini as EfficiencyFromMC
 HistosFromPAT.leptonsFromDileptons = True
 ####################################
 ####################################
@@ -237,6 +238,7 @@ for cut_name, Selection in cuts.iteritems():
      # Histos now just needs to know which leptons and dileptons to use.
       
 	histos = HistosFromPAT.clone(lepton_src = cms.InputTag(leptons_name, 'muons'), dilepton_src = cms.InputTag(name), year = cms.int32(year))
+	#histos = EfficiencyFromMC.clone()
         # Add all these modules to the process and the path list.
         setattr(process, allname, alldil)
         setattr(process, name, dil)
